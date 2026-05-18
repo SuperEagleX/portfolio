@@ -1,0 +1,239 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 2rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ── Glow orbs ─────────────────────────────── */
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-float 8s ease-in-out infinite alternate;
+}
+
+.hero__orb--1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+}
+
+.hero__orb--2 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  animation-delay: -4s;
+}
+
+@keyframes orb-float {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.05); }
+}
+
+/* ── Content ───────────────────────────────── */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+/* Greeting */
+.hero__greeting {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.1em;
+}
+
+/* Name */
+.hero__name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 5.5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-bright) 0%, #a78bfa 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+}
+
+.glitch::before {
+  animation: glitch-a 4s infinite 2s;
+  clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+  transform: translateX(-3px);
+}
+
+.glitch::after {
+  animation: glitch-b 4s infinite 2.1s;
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  transform: translateX(3px);
+  filter: hue-rotate(90deg);
+}
+
+@keyframes glitch-a {
+  0%, 90%, 100% { opacity: 0; transform: translateX(-3px); }
+  92%           { opacity: 0.8; transform: translateX(4px); }
+  94%           { opacity: 0.8; transform: translateX(-2px); }
+  96%           { opacity: 0; }
+}
+
+@keyframes glitch-b {
+  0%, 91%, 100% { opacity: 0; transform: translateX(3px); }
+  93%           { opacity: 0.8; transform: translateX(-4px); }
+  95%           { opacity: 0.8; transform: translateX(2px); }
+  97%           { opacity: 0; }
+}
+
+/* Current position badge */
+.hero__position {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__pos-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-glow);
+  border-radius: 999px;
+  padding: 0.28rem 1.1rem;
+}
+
+/* Role / whoami line */
+.hero__role {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+}
+
+.hero__role-cmd {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero__role-arrow {
+  color: var(--accent-dim);
+  font-weight: 500;
+}
+
+.hero__role-titles {
+  color: var(--text-secondary);
+}
+
+.hero__role-pipe {
+  color: var(--accent);
+  opacity: 0.5;
+}
+
+/* Bio */
+.hero__bio {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hero__bio-comment {
+  color: var(--accent-dim);
+  font-weight: 600;
+  user-select: none;
+}
+
+/* CV download button */
+.hero__cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-glow);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.hero__cv-btn:hover {
+  background: var(--accent-glow-strong, rgba(34,211,238,0.15));
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  text-decoration: none;
+  z-index: 2;
+  transition: color 0.2s;
+}
+
+.hero__scroll:hover { color: var(--accent); }
+
+/* Cursor blink (used by TypingText if ever re-added) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 600px) {
+  .hero__bio { white-space: normal; text-align: center; }
+  .hero__role { font-size: 0.72rem; padding: 0.5rem 0.9rem; }
+}

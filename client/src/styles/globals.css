@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+/* ── Theme Variables ───────────────────────────────────── */
+:root[data-theme='dark'] {
+  --bg-primary: #020817;
+  --bg-secondary: #0a1628;
+  --bg-card: #0d1f3c;
+  --bg-card-hover: #112240;
+  --border: rgba(14, 165, 233, 0.15);
+  --border-glow: rgba(14, 165, 233, 0.4);
+  --text-primary: #e2f0ff;
+  --text-secondary: #94b8d8;
+  --text-muted: #4a6a8a;
+  --accent: #0ea5e9;
+  --accent-bright: #38bdf8;
+  --accent-dim: #0369a1;
+  --accent-glow: rgba(14, 165, 233, 0.3);
+  --accent-glow-strong: rgba(14, 165, 233, 0.6);
+  --grid-color: rgba(14, 165, 233, 0.04);
+  --scrollbar-thumb: #0ea5e9;
+  --shadow-glow: 0 0 40px rgba(14, 165, 233, 0.15);
+  --nav-bg: rgba(2, 8, 23, 0.85);
+}
+
+:root[data-theme='light'] {
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fbff;
+  --border: rgba(3, 105, 161, 0.2);
+  --border-glow: rgba(3, 105, 161, 0.5);
+  --text-primary: #0c1a2e;
+  --text-secondary: #1e4070;
+  --text-muted: #5a8ab0;
+  --accent: #0284c7;
+  --accent-bright: #0ea5e9;
+  --accent-dim: #7dd3fc;
+  --accent-glow: rgba(2, 132, 199, 0.2);
+  --accent-glow-strong: rgba(2, 132, 199, 0.4);
+  --grid-color: rgba(2, 132, 199, 0.06);
+  --scrollbar-thumb: #0284c7;
+  --shadow-glow: 0 0 40px rgba(2, 132, 199, 0.12);
+  --nav-bg: rgba(240, 249, 255, 0.85);
+}
+
+/* ── Base Reset ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
+code, .mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ── Grid Background ───────────────────────────────────── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Glow utilities ────────────────────────────────────── */
+.glow-text {
+  text-shadow: 0 0 20px var(--accent-glow-strong), 0 0 40px var(--accent-glow);
+}
+
+.glow-border {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px rgba(14, 165, 233, 0.02);
+}
+
+/* ── Gradient text ─────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-bright) 0%, #a78bfa 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

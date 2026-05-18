@@ -1,0 +1,202 @@
+.certs {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ───────────────────────────────── */
+.certs__header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.certs__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.certs__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.certs__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-glow), transparent);
+}
+
+/* ── Timeline ─────────────────────────────── */
+.certs__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-left: 2.25rem;
+  border-left: 1px solid var(--border-glow);
+}
+
+.certs__entry {
+  position: relative;
+}
+
+/* ── Dot ──────────────────────────────────── */
+.certs__dot {
+  position: absolute;
+  left: -2.25rem;
+  top: 1.4rem;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--accent-dim);
+}
+
+.certs__dot--active {
+  background: #fbbf24;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251,191,36,0.2), 0 0 14px rgba(251,191,36,0.5);
+  animation: cert-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes cert-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(251,191,36,0.2), 0 0 14px rgba(251,191,36,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(251,191,36,0.08), 0 0 20px rgba(251,191,36,0.5); }
+}
+
+/* ── Card ─────────────────────────────────── */
+.certs__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-glow);
+  border-radius: 12px;
+  padding: 1.4rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.certs__card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.certs__card--active {
+  border-left-color: #fbbf24;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
+}
+
+/* ── Card top ─────────────────────────────── */
+.certs__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.certs__left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.certs__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-glow);
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.certs__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.certs__name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.certs__issuer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.certs__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.certs__status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.certs__period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Domains ──────────────────────────────── */
+.certs__domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.certs__domain {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.18rem 0.55rem;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 600px) {
+  .certs__card-top { flex-direction: column; }
+  .certs__right    { align-items: flex-start; }
+  .certs__card     { padding: 1.1rem 1.25rem; }
+}

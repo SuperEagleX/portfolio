@@ -1,0 +1,340 @@
+.about {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Section header ───────────────────────── */
+.about__header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.about__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.about__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.about__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-glow), transparent);
+}
+
+/* ── Grid ─────────────────────────────────── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ── Card ─────────────────────────────────── */
+.about__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.about__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.about__card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Mission card text ────────────────────── */
+.about__card-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.about__hl {
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+.about__focus {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.about__focus-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.about__focus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.about__focus-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.about__focus-list svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Education card ───────────────────────── */
+.about__card-body--edu {
+  gap: 1.5rem;
+}
+
+.about__edu-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-glow);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  letter-spacing: 0.05em;
+}
+
+.about__edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.about__edu-field {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.about__edu-uni {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.about__gpa-block {
+  padding: 1rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.about__gpa-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__gpa-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+.about__gpa-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.about__gpa-max {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.about__gpa-bar {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.about__gpa-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--accent), #a78bfa);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--accent-glow-strong);
+}
+
+/* ── Certification ────────────────────────── */
+.about__cert-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.about__cert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.about__cert-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about__cert-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.about__cert-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.about__cert-org {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.about__cert-badge {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  white-space: nowrap;
+}
+
+/* ── High school entry ────────────────────── */
+.about__hs-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about__hs-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about__hs-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(74,222,128,0.07);
+  border: 1px solid rgba(74,222,128,0.25);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.about__cert-badge--pass {
+  color: #4ade80;
+  background: rgba(74,222,128,0.08);
+  border-color: rgba(74,222,128,0.3);
+}
+
+/* ── Fun fact ─────────────────────────────── */
+.about__fun-fact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.about__fun-fact-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.about__fun-fact-label {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__cert { flex-wrap: wrap; }
+}

@@ -1,0 +1,207 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.navbar--scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 3rem;
+  box-shadow: 0 4px 30px rgba(14, 165, 233, 0.05);
+}
+
+/* Logo */
+.navbar__logo {
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.navbar__logo-bracket {
+  color: var(--accent);
+}
+
+.navbar__logo-name {
+  margin: 0 4px;
+}
+
+/* Links — absolutely centered on the page */
+.navbar__links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+}
+
+.navbar__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding-bottom: 4px;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--accent);
+}
+
+.navbar__link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.navbar__link:hover .navbar__link-underline,
+.navbar__link--active .navbar__link-underline {
+  width: 100%;
+}
+
+/* Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Blog button */
+.navbar__blog-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.38rem 0.75rem;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar__blog-btn:hover {
+  color: var(--accent);
+  border-color: var(--border-glow);
+}
+
+/* CV button */
+.navbar__cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-glow);
+  border-radius: 7px;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.navbar__cv-btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* Fixed theme toggle (bottom-right) */
+.theme-toggle-fixed {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.theme-toggle-fixed:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Mobile menu */
+.navbar__mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navbar__mobile-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.navbar__mobile-link:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .navbar__links { display: none; }
+  .navbar__hamburger { display: block; }
+  .navbar { padding: 1rem 1.5rem; }
+  .navbar--scrolled { padding: 0.8rem 1.5rem; }
+}

@@ -1,0 +1,168 @@
+.vol {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ───────────────────────────────── */
+.vol__header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.vol__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.vol__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.vol__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-glow), transparent);
+}
+
+/* ── Bento Grid ───────────────────────────── */
+/*
+  Row 1: featured(2) + md(1)
+  Row 2: md(1) + featured(2)
+  Row 3: md(1) + md(1) + md(1)
+*/
+.vol__bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ── Card sizes ───────────────────────────── */
+.vol__card--featured { grid-column: span 2; }
+.vol__card--md       { grid-column: span 1; }
+
+/* ── Card base ────────────────────────────── */
+.vol__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid color-mix(in srgb, var(--vc) 40%, transparent);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.vol__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, color-mix(in srgb, var(--vc) 6%, transparent) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.vol__card:hover::before { opacity: 1; }
+.vol__card:hover {
+  border-top-color: var(--vc);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.2);
+}
+
+/* ── Card top ─────────────────────────────── */
+.vol__card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.vol__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--vc) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vc) 30%, transparent);
+  color: var(--vc);
+  flex-shrink: 0;
+}
+
+.vol__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.vol__role {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.vol__org-period {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+}
+
+.vol__org    { color: var(--vc); }
+.vol__sep    { color: var(--text-muted); }
+.vol__period { color: var(--text-muted); }
+
+/* ── Description ──────────────────────────── */
+.vol__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* ── Tags ─────────────────────────────────── */
+.vol__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.vol__tag-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .vol__bento { grid-template-columns: repeat(2, 1fr); }
+  .vol__card--featured { grid-column: span 2; }
+}
+
+@media (max-width: 480px) {
+  .vol__bento { grid-template-columns: 1fr; }
+  .vol__card--featured { grid-column: span 1; }
+  .vol__card { padding: 1.2rem 1.25rem; }
+}

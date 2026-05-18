@@ -1,0 +1,47 @@
+.shooting-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shooting-star {
+  position: absolute;
+  width: var(--tail);
+  height: 1.5px;
+  background: linear-gradient(to left, var(--color), transparent);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  animation: star-shoot var(--dur) var(--delay) ease-out infinite;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 6px 3px var(--color), 0 0 12px 4px var(--color);
+}
+
+@keyframes star-shoot {
+  0% {
+    transform: rotate(-45deg) translateX(-80px);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--peak-opacity, 1);
+  }
+  75% {
+    opacity: var(--peak-opacity, 0.8);
+  }
+  100% {
+    transform: rotate(-45deg) translateX(1000px);
+    opacity: 0;
+  }
+}
