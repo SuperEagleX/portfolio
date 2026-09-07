@@ -40,7 +40,7 @@
 /* ── Bento grid ───────────────────────────── */
 .proj__bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 1.25rem;
 }
@@ -89,6 +89,10 @@
   grid-column: span 2;
 }
 
+.proj__card--full {
+  grid-column: 1 / -1;
+}
+
 /* md and sm use default 1×1 */
 
 /* ── Card internals ───────────────────────── */
@@ -128,11 +132,52 @@
   font-size: clamp(1.1rem, 2vw, 1.4rem);
 }
 
+.proj__title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.proj__period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
 .proj__desc {
   font-size: 0.87rem;
   color: var(--text-secondary);
   line-height: 1.7;
   flex: 1;
+}
+
+/* -- Bullet list ---------------------------- */
+.proj__bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.proj__bullet {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.proj__bullet::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--ac);
+  font-size: 0.75rem;
+  top: 0.05em;
 }
 
 /* ── Footer ───────────────────────────────── */
@@ -191,5 +236,6 @@
 @media (max-width: 560px) {
   .proj__bento { grid-template-columns: 1fr; }
   .proj__card--featured,
-  .proj__card--wide { grid-column: span 1; }
+  .proj__card--wide,
+  .proj__card--full { grid-column: span 1; }
 }

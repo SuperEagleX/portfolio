@@ -6,7 +6,7 @@ import About from '../components/About';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
-import Certifications from '../components/Certifications';
+// import Certifications from '../components/Certifications'; // hidden until certs are earned
 import Competitions from '../components/Competitions';
 import Volunteer from '../components/Volunteer';
 import Contact from '../components/Contact';
@@ -25,7 +25,7 @@ export default function LandingPage() {
         <Experience />
         <Projects />
         <Skills />
-        <Certifications />
+        {/* <Certifications /> hidden until certs are earned */}
         <Competitions />
         <Volunteer />
         <Contact />

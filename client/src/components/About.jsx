@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, BookOpen, Shield, Cpu, Zap, Award, Globe } from 'lucide-react';
+import { Target, GraduationCap, Shield, Cpu, Zap, Award, Globe } from 'lucide-react';
 import './About.css';
 
 const fadeUp = {
@@ -40,7 +40,7 @@ export default function About() {
 
       <div className="about__grid">
 
-        {/* ── Mission card ─────────────────────────── */}
+        {/* ── Overview card ────────────────────────── */}
         <motion.div
           className="about__card"
           initial="hidden"
@@ -50,22 +50,21 @@ export default function About() {
         >
           <div className="about__card-header">
             <Target size={15} />
-            <span>MISSION OBJECTIVE</span>
+            <span>OVERVIEW</span>
           </div>
 
           <div className="about__card-body">
             <p className="about__card-text">
-              Aspiring to become a world-class expert in{' '}
-              <span className="about__hl">offensive security</span> — mastering advanced
-              penetration testing, exploit development, and red team operations to think
-              like the adversary and break what others build.
+              A <span className="about__hl">Cybersecurity Professional</span> with a strong
+              interest in ethical hacking, penetration testing, vulnerability analysis, and
+              network security. Hard-working, energetic, passionate and technical-minded
+              individual.
             </p>
             <p className="about__card-text">
-              Simultaneously driving research at the convergence of{' '}
-              <span className="about__hl">artificial intelligence</span> and{' '}
-              <span className="about__hl">quantum computing</span> with cybersecurity —
-              exploring how these emerging forces redefine the threat landscape and the
-              future of defense.
+              Possess exceptional communication and collaboration skills with ability to
+              resolve problems quickly. I aim to contribute to{' '}
+              <span className="about__hl">stopping cyber criminals</span> and protecting
+              digital assets.
             </p>
 
             <div className="about__focus">
@@ -99,18 +98,34 @@ export default function About() {
           variants={fadeRight}
         >
           <div className="about__card-header">
-            <BookOpen size={15} />
-            <span>EDUCATION & CERTIFICATIONS</span>
+            <GraduationCap size={15} />
+            <span>EDUCATION</span>
           </div>
 
           <div className="about__card-body about__card-body--edu">
-            <div className="about__edu-badge">BSc</div>
 
-            <div className="about__edu-info">
-              <p className="about__edu-field">
-                <span className="about__hl">Cybersecurity</span>
-              </p>
-              <p className="about__edu-uni">American University of Phnom Penh</p>
+            <div className="about__edu-entry">
+              <div className="about__edu-badge">MSc</div>
+              <div className="about__edu-info">
+                <p className="about__edu-field about__edu-field--sm">
+                  Master of <span className="about__hl">Cybersecurity</span> (Advanced)
+                </p>
+                <p className="about__edu-uni">Torrens University Australia</p>
+                <p className="about__edu-period">Sep 2026 — Aug 2028</p>
+              </div>
+              <span className="about__cert-badge">ENROLLED</span>
+            </div>
+
+            <div className="about__cert-divider" />
+
+            <div className="about__edu-entry">
+              <div className="about__edu-badge">BSc</div>
+              <div className="about__edu-info">
+                <p className="about__edu-field">
+                  <span className="about__hl">Cybersecurity</span>
+                </p>
+                <p className="about__edu-uni">American University of Phnom Penh</p>
+              </div>
             </div>
 
             <div className="about__gpa-block">
@@ -142,21 +157,6 @@ export default function About() {
                 </div>
               </div>
               <span className="about__cert-badge about__cert-badge--pass">GRADE A</span>
-            </div>
-
-            <div className="about__cert-divider" />
-
-            <div className="about__cert">
-              <div className="about__cert-left">
-                <Award size={18} className="about__cert-icon" />
-                <div>
-                  <p className="about__cert-name">
-                    Certified Penetration Testing Specialist
-                  </p>
-                  <p className="about__cert-org">HackTheBox · CPTS</p>
-                </div>
-              </div>
-              <span className="about__cert-badge">IN PROGRESS</span>
             </div>
 
             <div className="about__cert-divider" />

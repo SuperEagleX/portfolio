@@ -132,6 +132,17 @@
   gap: 1.5rem;
 }
 
+.about__edu-entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about__edu-entry .about__edu-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .about__edu-badge {
   display: inline-flex;
   align-items: center;
@@ -161,10 +172,22 @@
   color: var(--text-primary);
 }
 
+.about__edu-field--sm {
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
 .about__edu-uni {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+.about__edu-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
 }
 
 .about__gpa-block {

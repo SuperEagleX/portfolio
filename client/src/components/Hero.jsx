@@ -43,7 +43,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.div variants={stagger.item} className="hero__position">
-          <span className="hero__pos-badge">Officer, IT Security (Pentest)</span>
+          <span className="hero__pos-badge">Penetration Tester</span>
         </motion.div>
 
         <motion.div variants={stagger.item} className="hero__role">
