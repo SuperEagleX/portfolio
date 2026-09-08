@@ -55,7 +55,7 @@ export default function Navbar() {
 
       <div className="navbar__actions">
         <a
-          href="/Savakroth_Leav_Resume_PenTest.pdf"
+          href="/Savakroth_Leav_CV_Penetration_Tester.pdf"
           download
           className="navbar__cv-btn"
           aria-label="Download CV"

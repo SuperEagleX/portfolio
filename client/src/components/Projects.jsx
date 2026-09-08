@@ -9,7 +9,7 @@ const PROJECTS = [
     icon: ShieldCheck,
     accent: 'blue',
     status: 'Deployed',
-    title: 'Tenable Nessus Compliance Automation Toolkit',
+    title: 'Tenable Nessus Compliment Automation Toolkit',
     period: 'Jun 2026 — Aug 2026',
     bullets: [
       'Engineered an automated security assessment web application integrating with the Tenable Nessus API to streamline vulnerability workflows and daily team operations',
@@ -17,7 +17,7 @@ const PROJECTS = [
       'Implemented a revalidation scanning engine alongside customizable baseline hardening and configuration checking to enhance scan accuracy',
       'Successfully deployed the platform across the organization, accelerating vulnerability triage and cross-departmental remediation',
     ],
-    tags: ['Tenable Nessus API', 'Automation', 'Compliance Baselines', 'Report Generation', 'Vulnerability Management'],
+    tags: ['Tenable Nessus API', 'Automation', 'Baseline Hardening', 'Report Generation', 'Vulnerability Management'],
   },
   {
     id: 2,
